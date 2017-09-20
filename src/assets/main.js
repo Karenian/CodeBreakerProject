@@ -13,20 +13,20 @@ function guess() {
     if (!validateInput(input.value))
         return false;
 
-    attempt = attempt + 1;
+    attempt.value = attempt.value + 1;
 
     if (getResults(input.value)) {
 
         setMessage('You Win! :)');
         showAnswer(true);
-        showReply();
+        showReplay();
 
     } else {
-        if (attempt >= 10) {
+        if (attempt.value >= 10) {
 
             setMessage('You Lose! :(');
             showAnswer(false);
-            showReply();
+            showReplay();
         }
         else
             setMessage('Incorrect, try again.');
@@ -91,7 +91,7 @@ function showAnswer(result) {
     }
 }
 
-function showReply() {
+function showReplay() {
     document.getElementById('guessing-div').style.display = 'none';
     document.getElementById('replay-div').style.display = 'block';
 }
