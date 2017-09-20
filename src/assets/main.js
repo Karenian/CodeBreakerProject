@@ -13,7 +13,7 @@ function guess() {
     if (!validateInput(input.value))
         return false;
 
-    attempt.value = attempt.value + 1;
+    attempt.value = parseInt(attempt.value) + 1;
 
     if (getResults(input.value)) {
 
@@ -22,6 +22,7 @@ function guess() {
         showReplay();
 
     } else {
+
         if (attempt.value >= 10) {
 
             setMessage('You Lose! :(');
